@@ -17,15 +17,15 @@ We set up the data frame. Edit the data below to include information about your 
 
 ```{r setup-tibble}
 team_data <- tibble(
-  name = c("Peter Rabbit", "member 1", "member 2", 
-           "member 3", "member 4"),
-  github_username = c("mcgregors-garden", "username 1", "username 2", 
-                      "username 3", "username 4"), 
-  colour = c("powderblue", "colour 1", "colour 2", 
-             "colour 3", "colour 4"),
-  hobby = c("Hopping", "hobby 1", "hobby 2", 
-            "hobby 3", "hobby 4"),
-  favourite_number = c(2, NA, NA, NA, NA)
+  name = c("Liam", "Cole", "Logan", 
+           "JP", "Alec"),
+  github_username = c("LiamKamphuis", "clooney", "logan-arm", 
+                      "john-paul", "a-n-a"), 
+  colour = c("purple1", "darkgoldenrod3", "black", 
+             "cadetblue3", "green3"),
+  hobby = c("Ice Hockey", "Tennis", "Film", 
+            "Physics", "Football"),
+  favourite_number = c(4, 6, 3, 8, 7)
   )
 
 team_data
@@ -47,16 +47,16 @@ p1
 ```
 
 
-*Remove this text (including the stars), and add your answer for Exercise 18 here.*
+A bar plot showing in alphabetical descending order, github usernames on the x-axis and the members favorite number on the y-axis. Colours have been chosen according to the filled in "favourite colour" data
 
 ### Exercises 19
 
 Change the text of the plot title and axis labels.
 
 ```{r labelled-bar-plot}
-p1 + labs(x = "Insert text here", 
-          y = "Insert text here",
-          title = "Insert text here")
+p1 + labs(x = "github_username", 
+          y = "favourite_number",
+          title = "The Best Plot Ever")
 ```
 
 *Remove this text (including the stars), and add your answer for Exercise 19 here.*
@@ -69,4 +69,4 @@ p2 <- ggplot(team_data, aes(x = hobby)) +
 p2
 ```
 
-*Remove this text (including the stars) and add your answer for Exercise 20 here.*
+Any type of variable with a high number of possible values that can be observed of it and it is unlikely to observe the same result multiple times will be awful to visualize with a histogram for observed frequency. This is very evident with continuous variables in which it is nearly impossible to observe a single value multiple times. Therefore, it is useful to view either probability density or create buckets of values. In this example, it would be useful to bucket similar answers to hobbies in more generalized histogram bars, such as hobbies correlating to "sports" or "arts"
